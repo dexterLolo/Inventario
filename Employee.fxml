@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmployeeController">
+   <tabs>
+      <Tab text="Inventario">
+         <content>
+            <SplitPane dividerPositions="0.23794002607561932" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="922.0">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="318.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="194.0" text="Añadir datos">
+                           <font>
+                              <Font size="33.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMarca" alignment="CENTER" layoutX="11.0" layoutY="183.0" prefHeight="26.0" prefWidth="194.0" promptText="Marca" />
+                        <TextField fx:id="txtArticulo" alignment="CENTER" layoutX="11.0" layoutY="124.0" prefHeight="26.0" prefWidth="194.0" promptText="Articulo" />
+                        <TextField fx:id="txtPrice" alignment="CENTER" layoutX="11.0" layoutY="294.0" prefHeight="26.0" prefWidth="194.0" promptText="Precio" />
+                        <TextField fx:id="intCantidad" alignment="CENTER" layoutX="11.0" layoutY="240.0" prefHeight="26.0" prefWidth="194.0" promptText="Cantidad" />
+                        <TextField fx:id="txtCategoria" alignment="CENTER" layoutX="11.0" layoutY="347.0" prefHeight="26.0" prefWidth="194.0" promptText="Categoria" />
+                        <Button layoutX="11.0" layoutY="382.0" mnemonicParsing="false" onAction="#insertEmployee" prefHeight="26.0" prefWidth="82.0" text="Añadir" />
+                        <Button layoutX="122.0" layoutY="382.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="82.0" text="Clear" />
+                        <Label layoutX="14.0" layoutY="329.0" text="Categoria:" />
+                        <Label layoutX="14.0" layoutY="276.0" text="Precio:" />
+                        <Label layoutX="16.0" layoutY="222.0" text="Cantidad:" />
+                        <Label layoutX="16.0" layoutY="165.0" text="Marca:" />
+                        <Label layoutX="14.0" layoutY="106.0" text="Arctículo:" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="558.0" prefWidth="684.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="8.0" prefHeight="51.0" prefWidth="173.0" text="Inventario">
+                           <font>
+                              <Font size="39.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="employeeTable" layoutX="35.0" layoutY="163.0" prefHeight="430.0" prefWidth="618.0">
+                           <columns>
+                              <TableColumn fx:id="colEmpNombre" prefWidth="138.40001678466797" text="Nombre" />
+                              <TableColumn fx:id="colEmpMarca" prefWidth="132.0" text="Marca" />
+                              <TableColumn fx:id="colEmpCategoria" prefWidth="109.5999755859375" text="Categoria" />
+                              <TableColumn fx:id="colEmpPrice" prefWidth="116.00003051757812" text="Precio" />
+                              <TableColumn fx:id="colEmpCantidad" prefWidth="146.4000244140625" text="Cantidad" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="txtArticuloSearch" alignment="CENTER" layoutX="35.0" layoutY="79.0" prefHeight="26.0" prefWidth="194.0" promptText="Artículo" />
+                        <TextField fx:id="txtCategorySearch" alignment="CENTER" layoutX="247.0" layoutY="79.0" prefHeight="26.0" prefWidth="194.0" promptText="Categoria" />
+                        <TextField fx:id="intCantidadSearch" alignment="CENTER" layoutX="458.0" layoutY="79.0" prefHeight="26.0" prefWidth="194.0" promptText="Cantidad" />
+                        <Button layoutX="30.0" layoutY="124.0" mnemonicParsing="false" onAction="#searchEmployee" prefHeight="26.0" prefWidth="201.0" text="Buscar" />
+                        <Button layoutX="247.0" layoutY="124.0" mnemonicParsing="false" onAction="#updateEmployee" prefHeight="26.0" prefWidth="90.0" text="Actualizar" />
+                        <Button layoutX="562.0" layoutY="124.0" mnemonicParsing="false" onAction="#searchAll" prefHeight="26.0" prefWidth="90.0" text="Refresh" />
+                        <Button layoutX="350.0" layoutY="124.0" mnemonicParsing="false" onAction="#deleteEmployee" prefHeight="26.0" prefWidth="90.0" text="Borrar" />
+                        <Button layoutX="458.0" layoutY="124.0" mnemonicParsing="false" onAction="#searchCategoryEmployee" prefHeight="26.0" prefWidth="90.0" text="Categoria" />
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </content>
+      </Tab>
+      <Tab text="Cuenta">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </Tab>
+   </tabs>
+</TabPane>
